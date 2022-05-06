@@ -46,11 +46,11 @@ export default class App extends React.Component {
     let update = true;
 
     for (let key in Object.keys(this.state.favorites)) {
-      if (this.state.favorites[key] == data.name) {
+      if (this.state.favorites[key] === data.name) {
         update = false;
 
         this.setState({
-          favorites: this.state.favorites.filter(fav => fav != data.name)
+          favorites: this.state.favorites.filter(fav => fav !== data.name)
         });
 
         localStorage.setItem('favorites', JSON.stringify([...this.state.favorites]));
@@ -72,11 +72,11 @@ export default class App extends React.Component {
       <>
         <div className="App container-fluid">
           <section className="App-header row">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo mt-5" alt="logo" />
             
 
           </section>
-          <section className="App-body container">
+          <section className="App-body container py-5">
             <div className="row">
               {
               this.state.starWarsHeroData.results &&
@@ -88,7 +88,7 @@ export default class App extends React.Component {
                     <button className={this.state.favorites.includes(item.name) ? 'btn btn-outline-dark hero-favorite':'btn btn-outline-dark hero-favorite opacity-5'} onClick={() => this.updateFavorite(item.name)}>
                       <FontAwesomeIcon icon={faStar}/>
                     </button>
-                    <h3 className="fw-bolder">{item.name}</h3>
+                    <h4 className="fw-bolder pe-5">{item.name}</h4>
                     <p className="mb-0"><span className="fw-bold">Height: </span>{item.height}</p>
                     <p className="mb-0"><span className="fw-bold">Birth Date: </span>{item.birth_year}</p>
                   </div>
