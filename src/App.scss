@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App {
+  .card {
+    position: relative;
+    border-radius: 7px;
+    outline: none;
+    background: transparent;
+    color: white;
+    
+    &.even {
+      border: 2px solid rgba(104, 104, 31, 0.637);
+      box-shadow: 0 0 25px rgba(104, 104, 31, 0.637);
+
+      button {
+        svg {
+          color: rgba(104, 104, 31, 1);
+        }
+
+        &.opacity-5 {
+          svg {
+            color: rgba(104, 104, 31, .5);
+          }
+        }
+      }
+    }
+
+    &.odd {
+      border: 2px solid rgba(156, 0, 0, 0.644);
+      box-shadow: 0 0 25px rgba(156, 0, 0, 0.644);
+
+      button {
+        svg {
+          color: rgba(156, 0, 0, 1);
+        }
+
+        &.opacity-5 {
+          svg {
+            color: rgba(156, 0, 0, .5);
+          }
+        }
+        
+      }
+    }
+
+    &:hover {
+      &.even {
+        border: 2px solid rgba(104, 104, 31, 0.637);
+        box-shadow: 0 0 10px rgba(104, 104, 31, 0.637);
+  
+        button {
+          svg {
+            color: rgba(104, 104, 31, 1);
+          }
+        }
+      }
+  
+      &.odd {
+        border: 2px solid rgba(156, 0, 0, 0.644);
+        box-shadow: 0 0 10px rgba(156, 0, 0, 0.644);
+  
+        button {
+          svg {
+            color: rgba(156, 0, 0, 1);
+          }
+        }
+      }
+    }
+
+    button {
+      position: absolute;
+      border: none;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+      
+      &:hover {
+        background-color: transparent!important;
+
+        svg {
+          opacity: 1!important;
+          color:#fff;
+        }
+      }
+
+      svg {
+        opacity: 1;
+      }
+    
+      &.opacity-5 { 
+        svg {
+          opacity: .8;
+        }
+      }
+    }
+
+
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
